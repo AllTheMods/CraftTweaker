@@ -3,7 +3,7 @@ package crafttweaker.api.liquid;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.data.IData;
 import crafttweaker.api.item.IIngredient;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * @author Stanneke

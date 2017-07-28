@@ -1,6 +1,6 @@
 package crafttweaker.api.item;
 
-import stanhebben.zenscript.annotations.ZenMethod;
+import crafttweaker.annotations.ZenMethod;
 
 /**
  *

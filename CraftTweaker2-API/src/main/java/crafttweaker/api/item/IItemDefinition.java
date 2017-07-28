@@ -1,8 +1,7 @@
 package crafttweaker.api.item;
 
-import crafttweaker.annotations.ZenRegister;
+import crafttweaker.annotations.*;
 import crafttweaker.api.oredict.IOreDictEntry;
-import stanhebben.zenscript.annotations.*;
 
 import java.util.List;
 

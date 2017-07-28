@@ -2,7 +2,7 @@ package crafttweaker.api.block;
 
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.data.IData;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * Block interface. Used to interact with blocks in the world.

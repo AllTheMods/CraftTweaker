@@ -4,7 +4,7 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.player.IPlayer;
 import crafttweaker.api.recipes.ICraftingInventory;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * @author Stan Hebben

@@ -2,7 +2,7 @@ package crafttweaker.zenscript;
 
 import crafttweaker.runtime.GlobalFunctions;
 import stanhebben.zenscript.*;
-import stanhebben.zenscript.annotations.ZenExpansion;
+import crafttweaker.annotations.ZenExpansion;
 import stanhebben.zenscript.compiler.*;
 import stanhebben.zenscript.parser.Token;
 import stanhebben.zenscript.symbols.*;

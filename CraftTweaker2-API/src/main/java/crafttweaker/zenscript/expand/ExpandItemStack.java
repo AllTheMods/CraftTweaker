@@ -2,7 +2,7 @@ package crafttweaker.zenscript.expand;
 
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.*;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * @author Stan

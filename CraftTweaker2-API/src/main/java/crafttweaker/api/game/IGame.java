@@ -7,7 +7,7 @@ import crafttweaker.api.item.IItemDefinition;
 import crafttweaker.api.liquid.ILiquidDefinition;
 import crafttweaker.api.potions.IPotion;
 import crafttweaker.api.world.IBiome;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 import java.util.*;
 

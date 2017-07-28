@@ -3,7 +3,7 @@ package crafttweaker.runtime;
 import crafttweaker.IAction;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IIngredient;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 import java.util.List;
 

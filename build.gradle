@@ -67,7 +67,6 @@ task assembleMC1120(type: Jar, dependsOn: [\
         + projects1120.collect { ':' + it + ":build" }) {
     archiveName = "CraftTweaker2-1.12-${craftTweakerVersion}.jar"
 
-    from zipTree(project(":ZenScript").jar.archivePath)
     from zipTree(project(':CraftTweaker2-API').jar.archivePath)
     manifest {
         attributes 'FMLAT': 'crafttweaker_at.cfg'
@@ -85,7 +84,7 @@ task assembleDevBase1120(type: Jar, dependsOn: [
     manifest {
         attributes 'FMLAT': 'crafttweaker_at.cfg'
     }
-    from project(':ZenScript').sourceSets.main.output
+
     from project(':CraftTweaker2-API').sourceSets.main.output
     from project(':CraftTweaker2-MC1120-Main').sourceSets.main.output
 }
@@ -96,7 +95,6 @@ task assembleDevFull1120(type: Jar, dependsOn: [
         + projects1120.collect { ':' + it + ":build" }) {
     archiveName = "CraftTweaker2-Dev-Full-1.12-${craftTweakerVersion}.jar"
 
-    from project(':ZenScript').sourceSets.main.output
     from project(':CraftTweaker2-API').sourceSets.main.output
     manifest {
         attributes 'FMLAT': 'crafttweaker_at.cfg'

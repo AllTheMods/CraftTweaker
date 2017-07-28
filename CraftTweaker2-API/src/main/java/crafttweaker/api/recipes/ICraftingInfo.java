@@ -3,7 +3,7 @@ package crafttweaker.api.recipes;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.player.IPlayer;
 import crafttweaker.api.world.IDimension;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * @author Stan Hebben

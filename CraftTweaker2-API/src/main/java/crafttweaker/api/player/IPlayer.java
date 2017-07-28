@@ -4,7 +4,7 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.chat.IChatMessage;
 import crafttweaker.api.data.IData;
 import crafttweaker.api.item.IItemStack;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * @author Stan

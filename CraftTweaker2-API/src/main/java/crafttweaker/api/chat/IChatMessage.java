@@ -1,7 +1,7 @@
 package crafttweaker.api.chat;
 
 import crafttweaker.annotations.ZenRegister;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * Represents a chat message. Strings can be converted into chat messages, and
@@ -20,7 +20,7 @@ public interface IChatMessage {
      *
      * @return concatenated chat message
      */
-    @ZenOperator(OperatorType.ADD)
+    @ZenOperator() //TODO: +
     IChatMessage add(IChatMessage other);
     
     /**

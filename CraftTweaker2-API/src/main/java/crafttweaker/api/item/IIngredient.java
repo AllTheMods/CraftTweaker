@@ -3,7 +3,7 @@ package crafttweaker.api.item;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.liquid.ILiquidStack;
 import crafttweaker.api.player.IPlayer;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 import java.util.List;
 
@@ -70,7 +70,7 @@ public interface IIngredient {
      *
      * @return modified ingredient
      */
-    @ZenOperator(OperatorType.MUL)
+    //@ZenOperator(OperatorType.MUL)
     @ZenMethod
     IIngredient amount(int amount);
     
@@ -82,7 +82,7 @@ public interface IIngredient {
      *
      * @return or-ed ingredient
      */
-    @ZenOperator(OperatorType.OR)
+    //@ZenOperator(OperatorType.OR)
     @ZenMethod
     IIngredient or(IIngredient ingredient);
     
@@ -157,7 +157,7 @@ public interface IIngredient {
      *
      * @return true if the ingredient contains the given one
      */
-    @ZenOperator(OperatorType.CONTAINS)
+    //@ZenOperator(OperatorType.CONTAINS)
     boolean contains(IIngredient ingredient);
     
     /**

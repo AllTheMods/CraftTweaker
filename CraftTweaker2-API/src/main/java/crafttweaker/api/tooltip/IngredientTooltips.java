@@ -6,7 +6,7 @@ import crafttweaker.api.formatting.IFormattedText;
 import crafttweaker.api.item.*;
 import crafttweaker.api.util.IngredientMap;
 import crafttweaker.api.util.IngredientMap.IngredientMapEntry;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 import java.util.List;
 

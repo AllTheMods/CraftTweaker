@@ -1,7 +1,6 @@
 package crafttweaker.api.item;
 
-import crafttweaker.annotations.ZenRegister;
-import stanhebben.zenscript.annotations.ZenClass;
+import crafttweaker.annotations.*;
 
 /**
  * Item conditions apply additional conditions on item stacks.

@@ -3,7 +3,7 @@ package crafttweaker.api.entity;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.util.Position3f;
 import crafttweaker.api.world.IDimension;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * Entity interface. Used to obtain information about entities, and modify their

@@ -5,8 +5,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.chat.IChatMessage;
 import crafttweaker.api.data.*;
 import crafttweaker.api.formatting.IFormattedText;
-import stanhebben.zenscript.annotations.*;
-import stanhebben.zenscript.annotations.Optional;
+import crafttweaker.annotations.*;
+import crafttweaker.annotations.Optional;
 
 import java.util.*;
 

@@ -2,7 +2,7 @@ package crafttweaker.api.item;
 
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.data.IData;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * Conditions can be used to set requirements for matching items. They can be

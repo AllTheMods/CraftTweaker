@@ -1,7 +1,7 @@
 package crafttweaker.api.event;
 
 import crafttweaker.annotations.ZenRegister;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 import java.io.Closeable;
 

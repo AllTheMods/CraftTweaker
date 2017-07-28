@@ -1,7 +1,7 @@
 package crafttweaker.api.data;
 
 import crafttweaker.annotations.ZenRegister;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 import java.util.*;
 
@@ -16,34 +16,34 @@ import java.util.*;
 @ZenRegister
 public interface IData {
     
-    @ZenOperator(OperatorType.ADD)
+    //@ZenOperator(OperatorType.ADD)
     IData add(IData other);
     
-    @ZenOperator(OperatorType.SUB)
+    //@ZenOperator(OperatorType.SUB)
     IData sub(IData other);
     
-    @ZenOperator(OperatorType.MUL)
+    //@ZenOperator(OperatorType.MUL)
     IData mul(IData other);
     
-    @ZenOperator(OperatorType.DIV)
+    //@ZenOperator(OperatorType.DIV)
     IData div(IData other);
     
-    @ZenOperator(OperatorType.MOD)
+    //@ZenOperator(OperatorType.MOD)
     IData mod(IData other);
     
-    @ZenOperator(OperatorType.AND)
+    //@ZenOperator(OperatorType.AND)
     IData and(IData other);
     
-    @ZenOperator(OperatorType.OR)
+    //@ZenOperator(OperatorType.OR)
     IData or(IData other);
     
-    @ZenOperator(OperatorType.XOR)
+    //@ZenOperator(OperatorType.XOR)
     IData xor(IData other);
     
-    @ZenOperator(OperatorType.NEG)
+    //@ZenOperator(OperatorType.NEG)
     IData neg();
     
-    @ZenOperator(OperatorType.NOT)
+    //@ZenOperator(OperatorType.NOT)
     IData not();
     
     @ZenCaster
@@ -106,10 +106,10 @@ public interface IData {
     @ZenCaster
     int[] asIntArray();
     
-    @ZenOperator(OperatorType.INDEXGET)
+    //@ZenOperator(OperatorType.INDEXGET)
     IData getAt(int i);
     
-    @ZenOperator(OperatorType.INDEXSET)
+    //@ZenOperator(OperatorType.INDEXSET)
     void setAt(int i, IData value);
     
     @ZenMemberGetter
@@ -121,13 +121,13 @@ public interface IData {
     @ZenGetter
     int length();
     
-    @ZenOperator(OperatorType.CONTAINS)
+    //@ZenOperator(OperatorType.CONTAINS)
     boolean contains(IData data);
     
-    @ZenOperator(OperatorType.COMPARE)
+    //@ZenOperator(OperatorType.COMPARE)
     int compareTo(IData data);
     
-    @ZenOperator(OperatorType.EQUALS)
+    //@ZenOperator(OperatorType.EQUALS)
     boolean equals(IData data);
     
     @ZenGetter

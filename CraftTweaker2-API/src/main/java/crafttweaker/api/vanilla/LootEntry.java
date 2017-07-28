@@ -2,7 +2,7 @@ package crafttweaker.api.vanilla;
 
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.WeightedItemStack;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * @author Stan

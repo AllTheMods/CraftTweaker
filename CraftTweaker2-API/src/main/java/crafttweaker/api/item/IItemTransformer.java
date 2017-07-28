@@ -2,7 +2,7 @@ package crafttweaker.api.item;
 
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.player.IPlayer;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * An item transformer modifies an item stack after crafting. Used to apply

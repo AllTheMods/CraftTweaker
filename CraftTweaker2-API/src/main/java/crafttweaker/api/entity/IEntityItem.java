@@ -1,7 +1,7 @@
 package crafttweaker.api.entity;
 
 import crafttweaker.api.item.IItemStack;
-import stanhebben.zenscript.annotations.ZenGetter;
+import crafttweaker.annotations.ZenGetter;
 
 /**
  * Represents an item entity. Item entities are entities representing an item

@@ -4,7 +4,7 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.damage.IDamageSource;
 import crafttweaker.api.entity.IEntityItem;
 import crafttweaker.api.player.IPlayer;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 import java.util.List;
 

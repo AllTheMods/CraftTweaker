@@ -5,7 +5,7 @@ import crafttweaker.api.block.IBlock;
 import crafttweaker.api.data.IData;
 import crafttweaker.api.liquid.ILiquidStack;
 import crafttweaker.api.oredict.IOreDictEntry;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 import java.util.List;
 
@@ -194,7 +194,7 @@ public interface IItemStack extends IIngredient {
      *
      * @return new, modified item stack
      */
-    @ZenOperator(OperatorType.MUL)
+    //@ZenOperator(OperatorType.MUL)
     @ZenMethod
     IItemStack withAmount(int amount);
     

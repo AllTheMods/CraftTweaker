@@ -1,6 +1,6 @@
 package crafttweaker.api.potions;
 
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 @ZenClass("crafttweaker.api.IPotion")
 public interface IPotion {

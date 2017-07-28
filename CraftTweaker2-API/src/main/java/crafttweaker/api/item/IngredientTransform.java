@@ -1,7 +1,7 @@
 package crafttweaker.api.item;
 
 import crafttweaker.annotations.ZenRegister;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * Transformations can be used to modify an ingredient after it is used in a

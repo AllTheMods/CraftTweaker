@@ -1,6 +1,6 @@
 package crafttweaker.api.formatting;
 
-import stanhebben.zenscript.annotations.ZenMethod;
+import crafttweaker.annotations.ZenMethod;
 
 /**
  * @author Stan

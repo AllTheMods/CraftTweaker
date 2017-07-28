@@ -3,8 +3,8 @@ package crafttweaker.api.entity;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.util.IntegerRange;
-import stanhebben.zenscript.annotations.Optional;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.Optional;
+import crafttweaker.annotations.*;
 
 import java.util.*;
 

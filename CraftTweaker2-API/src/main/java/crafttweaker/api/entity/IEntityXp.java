@@ -1,7 +1,7 @@
 package crafttweaker.api.entity;
 
 import crafttweaker.annotations.ZenRegister;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * Represents an xp orb.

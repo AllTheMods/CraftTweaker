@@ -2,7 +2,7 @@ package crafttweaker.zenscript.expand;
 
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.data.*;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * Makes byte arrays convertable to IData.

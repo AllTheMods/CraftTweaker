@@ -1,7 +1,7 @@
 package crafttweaker.api.vanilla;
 
 import crafttweaker.annotations.ZenRegister;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 @ZenClass("crafttweaker.vanilla.ILootFunction")
 @ZenRegister

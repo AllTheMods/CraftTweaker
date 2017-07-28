@@ -13,7 +13,7 @@ import crafttweaker.api.server.IServer;
 import crafttweaker.api.vanilla.IVanilla;
 import crafttweaker.runtime.*;
 import crafttweaker.zenscript.*;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 import stanhebben.zenscript.symbols.*;
 import stanhebben.zenscript.type.natives.*;
 

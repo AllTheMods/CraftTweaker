@@ -1,7 +1,7 @@
 package crafttweaker.api.block;
 
 import crafttweaker.annotations.ZenRegister;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * Blocks definitions provide additional information about blocks.

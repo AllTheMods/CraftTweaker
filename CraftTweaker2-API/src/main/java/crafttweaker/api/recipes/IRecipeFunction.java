@@ -2,7 +2,7 @@ package crafttweaker.api.recipes;
 
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IItemStack;
-import stanhebben.zenscript.annotations.ZenClass;
+import crafttweaker.annotations.ZenClass;
 
 import java.util.Map;
 

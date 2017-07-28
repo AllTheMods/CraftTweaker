@@ -1,7 +1,7 @@
 package crafttweaker.runtime;
 
 import crafttweaker.api.player.IPlayer;
-import stanhebben.zenscript.annotations.ZenMethod;
+import crafttweaker.annotations.ZenMethod;
 
 /**
  * @author Stan

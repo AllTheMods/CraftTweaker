@@ -2,7 +2,7 @@ package crafttweaker.api.client;
 
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.player.IPlayer;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.annotations.*;
 
 /**
  * Interface for client interaction. Only available on clients.

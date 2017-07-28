@@ -1,7 +1,7 @@
 package crafttweaker.api.mods;
 
 import crafttweaker.api.item.IItemStack;
-import stanhebben.zenscript.annotations.ZenGetter;
+import crafttweaker.annotations.ZenGetter;
 
 /**
  * @author Stan Hebben
