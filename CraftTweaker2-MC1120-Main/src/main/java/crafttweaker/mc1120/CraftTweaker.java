@@ -1,10 +1,6 @@
 package crafttweaker.mc1120;
 
-import crafttweaker.CraftTweakerAPI;
-import crafttweaker.CrafttweakerImplementationAPI;
-import crafttweaker.annotations.ModOnly;
-import crafttweaker.annotations.ZenRegister;
-import crafttweaker.mc1120.brackets.*;
+import crafttweaker.*;
 import crafttweaker.mc1120.client.MCClient;
 import crafttweaker.mc1120.commands.CTChatCommand;
 import crafttweaker.mc1120.formatting.MCFormatter;
@@ -13,8 +9,7 @@ import crafttweaker.mc1120.game.MCGame;
 import crafttweaker.mc1120.item.MCItemUtils;
 import crafttweaker.mc1120.logger.MCLogger;
 import crafttweaker.mc1120.mods.MCLoadedMods;
-import crafttweaker.mc1120.network.MessageCopyClipboard;
-import crafttweaker.mc1120.network.MessageOpenBrowser;
+import crafttweaker.mc1120.network.*;
 import crafttweaker.mc1120.oredict.MCOreDict;
 import crafttweaker.mc1120.proxies.CommonProxy;
 import crafttweaker.mc1120.recipes.MCRecipeManager;
@@ -22,14 +17,11 @@ import crafttweaker.mc1120.server.MCServer;
 import crafttweaker.mc1120.util.CraftTweakerPlatformUtils;
 import crafttweaker.mc1120.vanilla.MCVanilla;
 import crafttweaker.runtime.IScriptProvider;
-import crafttweaker.runtime.providers.ScriptProviderCascade;
-import crafttweaker.runtime.providers.ScriptProviderDirectory;
-import crafttweaker.zenscript.GlobalRegistry;
+import crafttweaker.runtime.providers.*;
+import crafttweaker.sandbox.Sandbox;
 import net.minecraft.server.MinecraftServer;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
@@ -77,11 +69,13 @@ public class CraftTweaker {
             globalDir.mkdirs();
         scriptsGlobal = new ScriptProviderDirectory(globalDir);
         CrafttweakerImplementationAPI.setScriptProvider(scriptsGlobal);
+        CrafttweakerImplementationAPI.initSandbox();
     }
     
     @EventHandler
     public void onLoad(FMLPreInitializationEvent ev) {
         PROXY.registerEvents();
+        /*
         ev.getAsmData().getAll(ZenRegister.class.getCanonicalName()).forEach(clazz -> {
             try {
                 Class claz = Class.forName(clazz.getClassName());
@@ -102,7 +96,7 @@ public class CraftTweaker {
         GlobalRegistry.registerBracketHandler(new BracketHandlerOre());
         GlobalRegistry.registerBracketHandler(new BracketHandlerEntity());
         GlobalRegistry.registerBracketHandler(new BracketHandlerPotion());
-        
+        */
         if(CraftTweakerPlatformUtils.isClient()) {
             CraftTweakerAPI.client = new MCClient();
         }

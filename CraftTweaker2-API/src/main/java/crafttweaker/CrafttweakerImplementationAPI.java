@@ -17,6 +17,7 @@ import crafttweaker.api.server.*;
 import crafttweaker.api.vanilla.IVanilla;
 import crafttweaker.api.world.IBiome;
 import crafttweaker.runtime.IScriptProvider;
+import crafttweaker.sandbox.Sandbox;
 import crafttweaker.util.IEventHandler;
 import sun.awt.HeadlessToolkit;
 
@@ -82,6 +83,10 @@ public class CrafttweakerImplementationAPI {
         CraftTweakerAPI.format = formatter;
         CraftTweakerAPI.vanilla = vanilla;
         CraftTweakerAPI.itemUtils = itemUtils;
+    }
+    
+    public static void initSandbox(){
+        Sandbox.initSandbox();
     }
     
     /**

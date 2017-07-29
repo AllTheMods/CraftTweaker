@@ -2,7 +2,6 @@ package crafttweaker.mc1120.mods;
 
 import crafttweaker.api.mods.*;
 import net.minecraftforge.fml.common.*;
-import stanhebben.zenscript.util.MappingIterator;
 
 import java.util.*;
 
@@ -33,11 +32,11 @@ public class MCLoadedMods implements ILoadedMods {
     @Override
     public Iterator<IMod> iterator() {
         List<ModContainer> mods = Loader.instance().getActiveModList();
-        return new MappingIterator<ModContainer, IMod>(mods.iterator()) {
-            @Override
-            public IMod map(ModContainer value) {
-                return new MCMod(value);
-            }
-        };
+        List<IMod> iMods = new ArrayList<>();
+        
+        for(ModContainer mod : mods) {
+            iMods.add(new MCMod(mod));
+        }
+        return iMods.iterator();
     }
 }

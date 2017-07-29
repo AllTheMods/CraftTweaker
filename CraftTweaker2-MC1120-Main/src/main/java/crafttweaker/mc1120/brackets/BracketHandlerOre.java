@@ -1,18 +1,9 @@
 package crafttweaker.mc1120.brackets;
 
-import crafttweaker.*;
+import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.*;
 import crafttweaker.api.oredict.IOreDictEntry;
 import crafttweaker.mc1120.oredict.MCOreDictEntry;
-import crafttweaker.zenscript.GlobalRegistry;
-import crafttweaker.zenscript.IBracketHandler;
-import stanhebben.zenscript.compiler.IEnvironmentGlobal;
-import stanhebben.zenscript.expression.*;
-import stanhebben.zenscript.expression.partial.IPartialExpression;
-import stanhebben.zenscript.parser.Token;
-import stanhebben.zenscript.symbols.IZenSymbol;
-import stanhebben.zenscript.type.natives.*;
-import stanhebben.zenscript.util.ZenPosition;
 
 import java.util.*;
 import java.util.regex.Pattern;
@@ -41,7 +32,7 @@ public class BracketHandlerOre implements IBracketHandler {
         
         return result;
     }
-    
+    /*
     @Override
     public IZenSymbol resolve(IEnvironmentGlobal environment, List<Token> tokens) {
         if(tokens.size() > 2) {
@@ -61,6 +52,6 @@ public class BracketHandlerOre implements IBracketHandler {
         }
         IJavaMethod method = JavaMethod.get(GlobalRegistry.getTypes(), BracketHandlerOre.class, valueBuilder.toString().contains("*") ? "getOreList" : "getOre", String.class);
         return position -> new ExpressionCallStatic(position, environment, method, new ExpressionString(position, valueBuilder.toString()));
-    }
+    }*/
     
 }

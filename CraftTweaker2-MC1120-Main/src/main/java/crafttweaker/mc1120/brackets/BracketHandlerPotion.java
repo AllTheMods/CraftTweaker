@@ -1,19 +1,10 @@
 package crafttweaker.mc1120.brackets;
 
 
-import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.*;
 import crafttweaker.api.potions.IPotion;
 import crafttweaker.mc1120.potions.MCPotion;
-import crafttweaker.zenscript.*;
-import net.minecraft.potion.*;
-import stanhebben.zenscript.compiler.IEnvironmentGlobal;
-import stanhebben.zenscript.expression.*;
-import stanhebben.zenscript.expression.partial.IPartialExpression;
-import stanhebben.zenscript.parser.Token;
-import stanhebben.zenscript.symbols.IZenSymbol;
-import stanhebben.zenscript.type.natives.*;
-import stanhebben.zenscript.util.ZenPosition;
+import net.minecraft.potion.Potion;
 
 import java.util.*;
 
@@ -21,12 +12,15 @@ import java.util.*;
 @ZenRegister
 public class BracketHandlerPotion implements IBracketHandler {
     
-    private static final Map<String, Potion> potionNames = new HashMap<>();
-    private final IJavaMethod method;
     
+    private static final Map<String, Potion> potionNames = new HashMap<>();
+    
+    /*
+    private final IJavaMethod method;
     public BracketHandlerPotion() {
         this.method = CraftTweakerAPI.getJavaMethod(BracketHandlerPotion.class, "getPotion", String.class);
     }
+    */
     
     public static Map<String, Potion> getPotionNames() {
         return potionNames;
@@ -48,6 +42,7 @@ public class BracketHandlerPotion implements IBracketHandler {
         return new MCPotion(pot);
     }
     
+    /*
     @Override
     public IZenSymbol resolve(IEnvironmentGlobal environment, List<Token> tokens) {
         return tokens.size() > 2 && tokens.get(0).getValue().equals("potion") && tokens.get(1).getValue().equals(":") ? this.find(environment, tokens, 2, tokens.size()) : null;
@@ -78,4 +73,5 @@ public class BracketHandlerPotion implements IBracketHandler {
             return new ExpressionCallStatic(position, this.environment, BracketHandlerPotion.this.method, new ExpressionString(position, this.name));
         }
     }
+    */
 }

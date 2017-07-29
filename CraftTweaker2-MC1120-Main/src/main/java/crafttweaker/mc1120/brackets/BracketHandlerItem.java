@@ -1,23 +1,11 @@
 package crafttweaker.mc1120.brackets;
 
-import crafttweaker.*;
 import crafttweaker.annotations.*;
-import crafttweaker.api.item.*;
+import crafttweaker.api.item.IItemStack;
 import crafttweaker.mc1120.item.MCItemUtils;
-import crafttweaker.zenscript.IBracketHandler;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.oredict.OreDictionary;
-import stanhebben.zenscript.ZenTokener;
-import stanhebben.zenscript.compiler.IEnvironmentGlobal;
-import stanhebben.zenscript.expression.*;
-import stanhebben.zenscript.expression.partial.IPartialExpression;
-import stanhebben.zenscript.parser.Token;
-import stanhebben.zenscript.symbols.IZenSymbol;
-import stanhebben.zenscript.type.ZenType;
-import stanhebben.zenscript.type.natives.IJavaMethod;
-import stanhebben.zenscript.util.ZenPosition;
 
 import java.util.*;
 
@@ -32,7 +20,7 @@ public class BracketHandlerItem implements IBracketHandler {
     
     private static final Map<String, Item> itemNames = new HashMap<>();
     private static final Map<String, Block> blockNames = new HashMap<>();
-    
+    /*
     private final IZenSymbol symbolAny;
     private final IJavaMethod method;
     
@@ -40,7 +28,7 @@ public class BracketHandlerItem implements IBracketHandler {
         symbolAny = CraftTweakerAPI.getJavaStaticFieldSymbol(IngredientAny.class, "INSTANCE");
         method = CraftTweakerAPI.getJavaMethod(BracketHandlerItem.class, "getItem", String.class, int.class);
     }
-    
+    */
     public static Map<String, Item> getItemNames() {
         return itemNames;
     }
@@ -77,6 +65,7 @@ public class BracketHandlerItem implements IBracketHandler {
         }
     }
     
+    /*
     @Override
     public IZenSymbol resolve(IEnvironmentGlobal environment, List<Token> tokens) {
         // any symbol
@@ -122,5 +111,5 @@ public class BracketHandlerItem implements IBracketHandler {
         
         return null;
     }
-    
+    */
 }

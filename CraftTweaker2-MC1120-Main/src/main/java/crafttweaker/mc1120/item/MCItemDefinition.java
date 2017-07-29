@@ -6,7 +6,7 @@ import crafttweaker.api.minecraft.CraftTweakerMC;
 import crafttweaker.api.oredict.IOreDictEntry;
 import net.minecraft.item.*;
 import net.minecraftforge.oredict.OreDictionary;
-import stanhebben.zenscript.annotations.Optional;
+import crafttweaker.annotations.Optional;
 
 import java.util.*;
 

@@ -207,6 +207,7 @@ public class MCItemStack implements IItemStack {
         } else {
             result.getTagCompound().removeTag(tag);
         }
+        
         IData dataTag = NBTConverter.from(result.getTagCompound(), false);
         return new MCItemStack(result, dataTag);
     }

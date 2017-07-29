@@ -38,7 +38,7 @@ dependencies {
 
     deobfCompile "mezz.jei:jei_1.12:$jei_version"
 
-    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.11'
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.12'
 
 }
 

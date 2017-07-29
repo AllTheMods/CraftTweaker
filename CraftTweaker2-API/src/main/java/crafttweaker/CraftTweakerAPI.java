@@ -1,6 +1,6 @@
 package crafttweaker;
 
-import crafttweaker.annotations.BracketHandler;
+import crafttweaker.annotations.*;
 import crafttweaker.api.client.IClient;
 import crafttweaker.api.event.IEventManager;
 import crafttweaker.api.formatting.IFormatter;
@@ -12,13 +12,8 @@ import crafttweaker.api.recipes.*;
 import crafttweaker.api.server.IServer;
 import crafttweaker.api.vanilla.IVanilla;
 import crafttweaker.runtime.*;
-import crafttweaker.zenscript.*;
-import crafttweaker.annotations.*;
-import stanhebben.zenscript.symbols.*;
-import stanhebben.zenscript.type.natives.*;
 
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
 import java.util.logging.*;
 
 /**
@@ -87,7 +82,7 @@ public class CraftTweakerAPI {
      */
     public static IItemUtils itemUtils = null;
     
-    
+    /* TODO: Replace with static (star?) imports
     static {
         registerGlobalSymbol("logger", getJavaStaticGetterSymbol(CraftTweakerAPI.class, "getLogger"));
         registerGlobalSymbol("recipes", getJavaStaticFieldSymbol(CraftTweakerAPI.class, "recipes"));
@@ -102,6 +97,7 @@ public class CraftTweakerAPI {
         registerGlobalSymbol("vanilla", getJavaStaticFieldSymbol(CraftTweakerAPI.class, "vanilla"));
         registerGlobalSymbol("itemUtils", getJavaStaticFieldSymbol(CraftTweakerAPI.class, "itemUtils"));
     }
+    */
     
     private CraftTweakerAPI() {
         
@@ -194,6 +190,7 @@ public class CraftTweakerAPI {
      *
      * @param annotatedClass class that is annotated
      */
+    /* TODO - Classes don't really have to be registered anymore with Groovy
     public static void registerClass(Class annotatedClass) {
         for(Annotation annotation : annotatedClass.getAnnotations()) {
             if(annotation instanceof ZenExpansion) {
@@ -212,7 +209,7 @@ public class CraftTweakerAPI {
                 }
             }
         }
-    }
+    }*/
     
     /**
      * Registers a global symbol. Global symbols are immediately accessible from
@@ -221,9 +218,11 @@ public class CraftTweakerAPI {
      * @param name   symbol name
      * @param symbol symbol
      */
+    /* TODO
     public static void registerGlobalSymbol(String name, IZenSymbol symbol) {
         GlobalRegistry.registerGlobal(name, symbol);
     }
+    */
     
     /**
      * Registers a bracket handler. Is capable of converting the bracket syntax
@@ -232,9 +231,11 @@ public class CraftTweakerAPI {
      *
      * @param handler bracket handler to be added
      */
+    /* TODO: find bracket handler alternative
     public static void registerBracketHandler(IBracketHandler handler) {
         GlobalRegistry.registerBracketHandler(handler);
     }
+    */
     
     /**
      * Creates a symbol that refers to a java method.
@@ -245,10 +246,12 @@ public class CraftTweakerAPI {
      *
      * @return corresponding symbol
      */
+    /*TODO
     public static IZenSymbol getJavaStaticMethodSymbol(Class cls, String name, Class... arguments) {
         IJavaMethod method = JavaMethod.get(GlobalRegistry.getTypes(), cls, name, arguments);
         return new SymbolJavaStaticMethod(method);
     }
+    */
     
     /**
      * Creates a symbol that refers to a java getter. The getter must be a
@@ -260,10 +263,12 @@ public class CraftTweakerAPI {
      *
      * @return corresponding symbol
      */
+    /*TODO
     public static IZenSymbol getJavaStaticGetterSymbol(Class<? extends CraftTweakerAPI> cls, String name) {
         IJavaMethod method = JavaMethod.get(GlobalRegistry.getTypes(), cls, name);
         return new SymbolJavaStaticGetter(method);
     }
+    */
     
     /**
      * Creates a symbol that refers to a static field. The field must be an
@@ -275,6 +280,7 @@ public class CraftTweakerAPI {
      *
      * @return corresponding symbol
      */
+    /*TODO
     public static IZenSymbol getJavaStaticFieldSymbol(Class<? extends Object> cls, String name) {
         try {
             Field field = cls.getField(name);
@@ -283,6 +289,7 @@ public class CraftTweakerAPI {
             return null;
         }
     }
+    */
     
     /**
      * Loads a Java method from an existing class.
@@ -293,7 +300,9 @@ public class CraftTweakerAPI {
      *
      * @return java method
      */
+    /* TODO
     public static IJavaMethod getJavaMethod(Class<? extends IBracketHandler> cls, String name, Class... arguments) {
         return JavaMethod.get(GlobalRegistry.getTypes(), cls, name, arguments);
     }
+    */
 }

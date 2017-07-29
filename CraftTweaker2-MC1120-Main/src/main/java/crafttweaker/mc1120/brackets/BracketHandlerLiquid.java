@@ -1,18 +1,9 @@
 package crafttweaker.mc1120.brackets;
 
-import crafttweaker.zenscript.IBracketHandler;
 import crafttweaker.annotations.*;
 import crafttweaker.api.liquid.ILiquidStack;
 import crafttweaker.mc1120.liquid.MCLiquidStack;
-import crafttweaker.zenscript.GlobalRegistry;
 import net.minecraftforge.fluids.*;
-import stanhebben.zenscript.compiler.IEnvironmentGlobal;
-import stanhebben.zenscript.expression.*;
-import stanhebben.zenscript.expression.partial.IPartialExpression;
-import stanhebben.zenscript.parser.Token;
-import stanhebben.zenscript.symbols.IZenSymbol;
-import stanhebben.zenscript.type.natives.*;
-import stanhebben.zenscript.util.ZenPosition;
 
 import java.util.*;
 
@@ -24,11 +15,13 @@ import java.util.*;
 public class BracketHandlerLiquid implements IBracketHandler {
     
     private static final Map<String, Fluid> fluidNames = new HashMap<>();
+    /*
     private final IJavaMethod method;
     
     public BracketHandlerLiquid() {
         method = JavaMethod.get(GlobalRegistry.getTypes(), BracketHandlerLiquid.class, "getLiquid", String.class);
     }
+    */
     
     @SuppressWarnings("unchecked")
     public static void rebuildLiquidRegistry() {
@@ -46,7 +39,7 @@ public class BracketHandlerLiquid implements IBracketHandler {
             return null;
         }
     }
-    
+    /*
     @Override
     public IZenSymbol resolve(IEnvironmentGlobal environment, List<Token> tokens) {
         if(tokens.size() > 2) {
@@ -72,5 +65,5 @@ public class BracketHandlerLiquid implements IBracketHandler {
         
         return null;
     }
-    
+    */
 }

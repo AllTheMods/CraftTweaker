@@ -20,7 +20,7 @@ public interface IChatMessage {
      *
      * @return concatenated chat message
      */
-    @ZenOperator() //TODO: +
+    @ZenOperator(OperatorType.ADD) //TODO: +
     IChatMessage add(IChatMessage other);
     
     /**

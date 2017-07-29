@@ -1,16 +1,8 @@
 package crafttweaker.mc1120.brackets;
 
-import crafttweaker.*;
+import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.*;
 import crafttweaker.api.entity.IEntityDefinition;
-import crafttweaker.zenscript.IBracketHandler;
-import stanhebben.zenscript.compiler.IEnvironmentGlobal;
-import stanhebben.zenscript.expression.*;
-import stanhebben.zenscript.expression.partial.IPartialExpression;
-import stanhebben.zenscript.parser.Token;
-import stanhebben.zenscript.symbols.IZenSymbol;
-import stanhebben.zenscript.type.natives.IJavaMethod;
-import stanhebben.zenscript.util.ZenPosition;
 
 import java.util.*;
 
@@ -22,11 +14,12 @@ import java.util.*;
 public class BracketHandlerEntity implements IBracketHandler {
     
     private static final Map<String, IEntityDefinition> entityNames = new HashMap<>();
-    private final IJavaMethod method;
+    
+    /*private final IJavaMethod method;
     
     public BracketHandlerEntity() {
         method = CraftTweakerAPI.getJavaMethod(BracketHandlerEntity.class, "getEntity", String.class);
-    }
+    }*/
     
     public static void rebuildEntityRegistry() {
         entityNames.clear();
@@ -37,6 +30,7 @@ public class BracketHandlerEntity implements IBracketHandler {
         return entityNames.get(name.toLowerCase());
     }
     
+    /*
     @Override
     public IZenSymbol resolve(IEnvironmentGlobal environment, List<Token> tokens) {
         if(tokens.size() > 2) {
@@ -55,6 +49,6 @@ public class BracketHandlerEntity implements IBracketHandler {
             valueBuilder.append(token.getValue());
         }
         return position -> new ExpressionCallStatic(position, environment, method, new ExpressionString(position, valueBuilder.toString()));
-    }
+    }*/
     
 }

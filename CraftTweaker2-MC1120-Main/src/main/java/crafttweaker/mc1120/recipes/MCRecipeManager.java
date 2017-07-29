@@ -21,7 +21,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import net.minecraftforge.registries.GameData;
 import net.minecraftforge.registries.RegistryManager;
-import stanhebben.zenscript.annotations.Optional;
+import crafttweaker.annotations.Optional;
 
 import java.util.*;
 import java.util.regex.*;
