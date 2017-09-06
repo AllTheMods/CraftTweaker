@@ -18,7 +18,7 @@ import static stanhebben.zenscript.ZenModule.*;
  */
 public class MTTweaker implements ITweaker {
     
-    private static boolean DEBUG = false;
+    private static boolean DEBUG = true;
     
     private final List<IUndoableAction> actions = new ArrayList<>();
     private final Set<IUndoableAction> wereStuck = new LinkedHashSet<>();
