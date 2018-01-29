@@ -7,6 +7,7 @@ import crafttweaker.api.minecraft.CraftTweakerMC;
 import crafttweaker.api.oredict.*;
 import crafttweaker.api.player.IPlayer;
 import crafttweaker.mc1120.actions.*;
+import crafttweaker.mc1120.item.MCItemStackHelper;
 import crafttweaker.mc1120.util.CraftTweakerHacks;
 import crafttweaker.util.ArrayUtil;
 import net.minecraft.item.ItemStack;
@@ -101,8 +102,10 @@ public class MCOreDictEntry implements IOreDictEntry {
 
     @Override
     public boolean contains(IItemStack item) {
-        for(ItemStack itemStack : OreDictionary.getOres(getName())) {
-            if(getIItemStackWildcardSize(itemStack).matches(item)) {
+        ItemStack internalStack = CraftTweakerMC.getItemStack(item);
+        
+        for (ItemStack itemStack : OreDictionary.getOres(getName())) {
+            if (MCItemStackHelper.matches(internalStack, itemStack, true)) {
                 return true;
             }
         }
