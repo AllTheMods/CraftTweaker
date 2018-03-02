@@ -4,7 +4,7 @@ import java.util.List;
 
 import crafttweaker.annotations.BracketHandler;
 import crafttweaker.annotations.ZenRegister;
-import crafttweaker.zenscript.IBracketHandler;
+import stanhebben.zenscript.impl.IBracketHandler;
 import stanhebben.zenscript.compiler.IEnvironmentGlobal;
 import stanhebben.zenscript.expression.ExpressionString;
 import stanhebben.zenscript.expression.partial.IPartialExpression;

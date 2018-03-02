@@ -1,0 +1,18 @@
+100 random oredicts:
+normal: 283ms 
+regex: 183ms
+
+
+
+all MC items:
+normal: 	261ms | 258ms | 238ms
+regex: 		273ms | 278ms | 266ms
+no match:	295ms | 277ms | 270ms
+concat:		269ms | 247ms | 274ms
+opLoop:		260ms | 257ms | 246ms
+opLoopMat:	288ms | 239ms | 258ms
+
+
+ATM3:
+
+regex: 704ms

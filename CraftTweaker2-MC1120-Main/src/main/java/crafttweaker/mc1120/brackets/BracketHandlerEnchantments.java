@@ -4,7 +4,7 @@ import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.*;
 import crafttweaker.api.enchantments.IEnchantmentDefinition;
 import crafttweaker.mc1120.enchantments.MCEnchantmentDefinition;
-import crafttweaker.zenscript.IBracketHandler;
+import stanhebben.zenscript.impl.IBracketHandler;
 import net.minecraft.enchantment.Enchantment;
 import stanhebben.zenscript.compiler.IEnvironmentGlobal;
 import stanhebben.zenscript.expression.*;
@@ -13,11 +13,12 @@ import stanhebben.zenscript.symbols.IZenSymbol;
 import stanhebben.zenscript.type.natives.IJavaMethod;
 
 import java.util.*;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 @BracketHandler(priority = 100)
 @ZenRegister
-public class BracketHandlerEnchantments implements IBracketHandler {
+public class BracketHandlerEnchantments implements IBracketHandler<IEnchantmentDefinition> {
     
     private static final HashMap<String, IEnchantmentDefinition> enchantments = new HashMap<>();
     private final IJavaMethod method;
@@ -41,5 +42,26 @@ public class BracketHandlerEnchantments implements IBracketHandler {
         if(!(tokens.get(0).getValue().equalsIgnoreCase("enchantment") && tokens.get(1).getValue().equals(":")))
             return null;
         return position -> new ExpressionCallStatic(position, environment, method, new ExpressionString(position, tokens.subList(2, tokens.size()).stream().map(Token::getValue).collect(Collectors.joining())));
+    }
+    
+    private static final Pattern PATTERN = Pattern.compile("enchantment:.*");
+    @Override
+    public Pattern getRegexPattern() {
+        return PATTERN;
+    }
+    
+    @Override
+    public Class<IEnchantmentDefinition> getReferenceClass() {
+        return IEnchantmentDefinition.class;
+    }
+    
+    @Override
+    public IEnchantmentDefinition resolve(List<String> strings) {
+        return null;
+    }
+    
+    @Override
+    public int getPriority() {
+        return 100;
     }
 }

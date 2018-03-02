@@ -4,7 +4,7 @@ import crafttweaker.*;
 import crafttweaker.annotations.*;
 import crafttweaker.api.item.*;
 import crafttweaker.mc1120.item.MCItemUtils;
-import crafttweaker.zenscript.IBracketHandler;
+import stanhebben.zenscript.impl.IBracketHandler;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.util.ResourceLocation;
@@ -18,6 +18,7 @@ import stanhebben.zenscript.type.ZenType;
 import stanhebben.zenscript.type.natives.IJavaMethod;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 import static crafttweaker.api.minecraft.CraftTweakerMC.getIItemStackWildcardSize;
 
@@ -26,7 +27,7 @@ import static crafttweaker.api.minecraft.CraftTweakerMC.getIItemStackWildcardSiz
  */
 @BracketHandler(priority = 100)
 @ZenRegister
-public class BracketHandlerItem implements IBracketHandler {
+public class BracketHandlerItem implements IBracketHandler<IItemStack> {
     
     private static final Map<String, Item> itemNames = new HashMap<>();
     private static final Map<String, Block> blockNames = new HashMap<>();
@@ -104,6 +105,27 @@ public class BracketHandlerItem implements IBracketHandler {
         }
         
         return find(environment, tokens, fromIndex, toIndex, meta);
+    }
+    
+    private static final Pattern PATTERN = Pattern.compile("(item:)?([^:>]*):([^:>]*)(:([0-9]+|\\*))?");
+    @Override
+    public Pattern getRegexPattern() {
+        return PATTERN;
+    }
+    
+    @Override
+    public Class<IItemStack> getReferenceClass() {
+        return IItemStack.class;
+    }
+    
+    @Override
+    public IItemStack resolve(List<String> strings) {
+        return null;
+    }
+    
+    @Override
+    public int getPriority() {
+        return 100;
     }
     
     private IZenSymbol find(IEnvironmentGlobal environment, List<Token> tokens, int startIndex, int endIndex, int meta) {

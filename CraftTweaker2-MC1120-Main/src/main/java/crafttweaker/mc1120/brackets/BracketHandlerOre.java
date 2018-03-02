@@ -5,7 +5,7 @@ import crafttweaker.annotations.*;
 import crafttweaker.api.oredict.IOreDictEntry;
 import crafttweaker.mc1120.oredict.MCOreDictEntry;
 import crafttweaker.zenscript.GlobalRegistry;
-import crafttweaker.zenscript.IBracketHandler;
+import stanhebben.zenscript.impl.IBracketHandler;
 import stanhebben.zenscript.compiler.IEnvironmentGlobal;
 import stanhebben.zenscript.expression.*;
 import stanhebben.zenscript.parser.Token;
@@ -20,7 +20,7 @@ import java.util.regex.Pattern;
  */
 @BracketHandler(priority = 100)
 @ZenRegister
-public class BracketHandlerOre implements IBracketHandler {
+public class BracketHandlerOre implements IBracketHandler<IOreDictEntry> {
     
     public static IOreDictEntry getOre(String name) {
         return new MCOreDictEntry(name);
@@ -48,6 +48,27 @@ public class BracketHandlerOre implements IBracketHandler {
             }
         }
         return null;
+    }
+    
+    private static final Pattern PATTERN = Pattern.compile("ore:.*");
+    @Override
+    public Pattern getRegexPattern() {
+        return PATTERN;
+    }
+    
+    @Override
+    public Class<IOreDictEntry> getReferenceClass() {
+        return null;
+    }
+    
+    @Override
+    public IOreDictEntry resolve(List<String> strings) {
+        return null;
+    }
+    
+    @Override
+    public int getPriority() {
+        return 100;
     }
     
     private IZenSymbol find(IEnvironmentGlobal environment, List<Token> tokens, int startIndex, int endIndex) {

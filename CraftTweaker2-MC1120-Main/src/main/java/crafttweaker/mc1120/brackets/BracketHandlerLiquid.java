@@ -1,6 +1,6 @@
 package crafttweaker.mc1120.brackets;
 
-import crafttweaker.zenscript.IBracketHandler;
+import stanhebben.zenscript.impl.IBracketHandler;
 import crafttweaker.annotations.*;
 import crafttweaker.api.liquid.ILiquidStack;
 import crafttweaker.mc1120.liquid.MCLiquidStack;
@@ -13,13 +13,14 @@ import stanhebben.zenscript.symbols.IZenSymbol;
 import stanhebben.zenscript.type.natives.*;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 /**
  * @author Stan
  */
 @BracketHandler(priority = 100)
 @ZenRegister
-public class BracketHandlerLiquid implements IBracketHandler {
+public class BracketHandlerLiquid implements IBracketHandler<ILiquidStack> {
     
     private static final Map<String, Fluid> fluidNames = new HashMap<>();
     private final IJavaMethod method;
@@ -71,4 +72,24 @@ public class BracketHandlerLiquid implements IBracketHandler {
         return null;
     }
     
+    private static final Pattern PATTERN = Pattern.compile("(liquid|fluid):.*");
+    @Override
+    public Pattern getRegexPattern() {
+        return PATTERN;
+    }
+    
+    @Override
+    public Class<ILiquidStack> getReferenceClass() {
+        return ILiquidStack.class;
+    }
+    
+    @Override
+    public ILiquidStack resolve(List<String> strings) {
+        return null;
+    }
+    
+    @Override
+    public int getPriority() {
+        return 100;
+    }
 }

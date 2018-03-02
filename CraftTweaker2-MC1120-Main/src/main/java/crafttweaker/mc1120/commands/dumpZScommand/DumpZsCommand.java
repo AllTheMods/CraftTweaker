@@ -7,6 +7,7 @@ import joptsimple.internal.Strings;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
 import org.apache.commons.io.FileUtils;
+import stanhebben.zenscript.impl.IBracketHandler;
 import stanhebben.zenscript.symbols.*;
 import stanhebben.zenscript.type.*;
 import stanhebben.zenscript.type.natives.*;
@@ -73,8 +74,8 @@ public class DumpZsCommand extends CraftTweakerCommand {
         }
         
         TreeNode<String> bracketNode = root.addChild("Bracket Handlers");
-        for(Pair<Integer, IBracketHandler> pair : GlobalRegistry.getPrioritizedBracketHandlers()) {
-            bracketNode.addChild(pair.getClass().getName() + ", priority: " + pair.getKey());
+        for(IBracketHandler bracketHandler : GlobalRegistry.getPrioritizedBracketHandlers()) {
+            bracketNode.addChild(bracketHandler.getClass().getName() + ", priority: " + bracketHandler.getPriority());
         }
         
         TreeNode<String> types = root.addChild("Types");

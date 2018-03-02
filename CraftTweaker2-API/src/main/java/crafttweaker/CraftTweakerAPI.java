@@ -14,6 +14,7 @@ import crafttweaker.api.vanilla.IVanilla;
 import crafttweaker.runtime.*;
 import crafttweaker.zenscript.*;
 import stanhebben.zenscript.annotations.*;
+import stanhebben.zenscript.impl.IBracketHandler;
 import stanhebben.zenscript.symbols.*;
 import stanhebben.zenscript.type.natives.*;
 

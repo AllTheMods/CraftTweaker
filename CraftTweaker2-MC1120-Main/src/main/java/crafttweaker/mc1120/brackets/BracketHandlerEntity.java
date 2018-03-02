@@ -3,7 +3,7 @@ package crafttweaker.mc1120.brackets;
 import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.*;
 import crafttweaker.api.entity.IEntityDefinition;
-import crafttweaker.zenscript.IBracketHandler;
+import stanhebben.zenscript.impl.IBracketHandler;
 import stanhebben.zenscript.compiler.IEnvironmentGlobal;
 import stanhebben.zenscript.expression.*;
 import stanhebben.zenscript.parser.Token;
@@ -11,13 +11,14 @@ import stanhebben.zenscript.symbols.IZenSymbol;
 import stanhebben.zenscript.type.natives.IJavaMethod;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 /**
  * @author Jared
  */
 @BracketHandler(priority = 100)
 @ZenRegister
-public class BracketHandlerEntity implements IBracketHandler {
+public class BracketHandlerEntity implements IBracketHandler<IEntityDefinition> {
     
     private static final Map<String, IEntityDefinition> entityNames = new HashMap<>();
     private final IJavaMethod method;
@@ -56,4 +57,24 @@ public class BracketHandlerEntity implements IBracketHandler {
         return position -> new ExpressionCallStatic(position, environment, method, new ExpressionString(position, valueBuilder.toString()));
     }
     
+    private static final Pattern PATTERN = Pattern.compile("entity:.*");
+    @Override
+    public Pattern getRegexPattern() {
+        return PATTERN;
+    }
+    
+    @Override
+    public Class<IEntityDefinition> getReferenceClass() {
+        return IEntityDefinition.class;
+    }
+    
+    @Override
+    public IEntityDefinition resolve(List<String> strings) {
+        return null;
+    }
+    
+    @Override
+    public int getPriority() {
+        return 100;
+    }
 }

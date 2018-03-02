@@ -10,16 +10,18 @@ import net.minecraft.potion.*;
 import stanhebben.zenscript.compiler.IEnvironmentGlobal;
 import stanhebben.zenscript.expression.*;
 import stanhebben.zenscript.expression.partial.IPartialExpression;
+import stanhebben.zenscript.impl.IBracketHandler;
 import stanhebben.zenscript.parser.Token;
 import stanhebben.zenscript.symbols.IZenSymbol;
 import stanhebben.zenscript.type.natives.*;
 import stanhebben.zenscript.util.ZenPosition;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 @BracketHandler(priority = 100)
 @ZenRegister
-public class BracketHandlerPotion implements IBracketHandler {
+public class BracketHandlerPotion implements IBracketHandler<IPotion> {
     
     private static final Map<String, Potion> potionNames = new HashMap<>();
     private final IJavaMethod method;
@@ -63,6 +65,27 @@ public class BracketHandlerPotion implements IBracketHandler {
         }
         
         return new PotionReferenceSymbol(environment, valueBuilder.toString());
+    }
+    
+    private static final Pattern PATTERN = Pattern.compile("potion:.*");
+    @Override
+    public Pattern getRegexPattern() {
+        return PATTERN;
+    }
+    
+    @Override
+    public Class<IPotion> getReferenceClass() {
+        return IPotion.class;
+    }
+    
+    @Override
+    public IPotion resolve(List<String> strings) {
+        return null;
+    }
+    
+    @Override
+    public int getPriority() {
+        return 100;
     }
     
     private class PotionReferenceSymbol implements IZenSymbol {
