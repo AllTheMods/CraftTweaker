@@ -12,6 +12,7 @@ import stanhebben.zenscript.util.Pair;
 
 import static crafttweaker.mc1120.commands.SpecialMessagesChat.*;
 
+@SuppressWarnings("Duplicates")
 public class DumpZsCommand extends CraftTweakerCommand {
     
     public DumpZsCommand() {

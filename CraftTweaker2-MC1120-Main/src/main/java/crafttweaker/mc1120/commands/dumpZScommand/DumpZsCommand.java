@@ -23,6 +23,7 @@ import java.util.*;
 
 import static crafttweaker.mc1120.commands.SpecialMessagesChat.*;
 
+@SuppressWarnings("Duplicates")
 public class DumpZsCommand extends CraftTweakerCommand {
     
     private static final String HTML_HEADER = "<!DOCTYPE html>\n"
@@ -184,7 +185,7 @@ public class DumpZsCommand extends CraftTweakerCommand {
      * Recursivly prints all zenSymbols if they are Symbol Packages
      */
     private void printZenSymbol(String s, IZenSymbol zenSymbol, TreeNode<String> node){
-        if (zenSymbol instanceof SymbolPackage){
+        if (zenSymbol instanceof SymbolPackage || zenSymbol instanceof SymbolType){
             printZenSymbolHelper(zenSymbol, node);
         } else {
             TreeNode<String> n = node.addChild(s);
