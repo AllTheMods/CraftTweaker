@@ -25,11 +25,15 @@ public class GlobalRegistry {
         registerGlobal("max", getStaticFunction(Math.class, "max", int.class, int.class));
         registerGlobal("min", getStaticFunction(Math.class, "min", int.class, int.class));
         registerGlobal("pow", getStaticFunction(Math.class, "pow", double.class, double.class));
-    
-    
-        INSTANCE.registerNativeClass(List.class);
-        INSTANCE.registerAdapter(List.class, "", List.class.getMethods());
-        INSTANCE.registerAdapter(Arrays.class, "", Arrays.class.getMethods());
+         
+         // INSTANCE.registerNativeClass(List.class);
+         // INSTANCE.registerAdapter(List.class, "", List.class.getMethods());
+         
+        try {
+            INSTANCE.registerAdapter(Arrays.class, "java.Arrays.", Arrays.class.getMethod("asList", Object[].class));
+        } catch(NoSuchMethodException e) {
+            e.printStackTrace();
+        }
     }
     
     private GlobalRegistry() {
